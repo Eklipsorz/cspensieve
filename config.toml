@@ -273,7 +273,7 @@ disableLanguages        = [""]
 
 [social]
   # Coding Communities
-  github                = "pacollins/hugo-future-imperfect-slim"
+  github                = "Eklipsorz"
   gitlab                = ""
   stackoverflow         = "" # User Number
   bitbucket             = ""
