@@ -55,7 +55,7 @@ disableLanguages        = [""]
       alt                 = "Hugo Future Imperfect Slim"
 
   [params.sidebar]
-    about               = "This theme was developed for Hugo static site generator."
+    about               = "一個儲存電腦科學知識的儲思盆，希望能記錄所有其他知識。"
     postAmount          = 5
     categories          = true
     categoriesByCount   = true
@@ -281,22 +281,22 @@ disableLanguages        = [""]
   codepen               = ""
   # Visual Art Communities
   deviantart            = ""
-  flickr                = "example"
+  flickr                = ""
   behance               = ""
   dribbble              = ""
   # Publishing Communities
   wordpress             = ""
   medium                = ""
   # Professional/Business Oriented Communities
-  linkedin              = "example"
-  linkedin_company      = "examplebusiness"
+  linkedin              = ""
+  linkedin_company      = ""
   foursquare            = ""
   xing                  = ""
   slideshare            = ""
   # Social Networks
-  facebook              = "example"
+  facebook              = ""
   googleplus            = ""
-  reddit                = "example"
+  reddit                = ""
   quora                 = ""
   youtube               = ""
   vimeo                 = ""
@@ -304,19 +304,19 @@ disableLanguages        = [""]
     # WeChat and QQ need testing.
     wechat              = ""
     qq                  = "" # User ID Number
-  instagram             = "example"
+  instagram             = ""
   tumblr                = ""
-  twitter               = "example"
+  twitter               = ""
   strava                = ""
   skype                 = ""
   snapchat              = ""
-  pinterest             = "example"
-  telegram              = "example"
+  pinterest             = ""
+  telegram              = "Eklipsorz"
   vine                  = ""
   googlescholar         = ""
   orcid                 = ""
-  researchgate          = "example"
-  keybase               = "example"
-  mastodon              = "example.com/@example"
+  researchgate          = ""
+  keybase               = ""
+  mastodon              = ""
   # Email
-  email                 = "example"
+  email                 = "eklipsorz@protonmail.ch"
