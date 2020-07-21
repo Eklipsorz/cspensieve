@@ -1,7 +1,11 @@
 ---
 title: "About"
+layout: "about"
+description: "定義本網站的存在意義"
 date: 2020-07-20T17:32:23+08:00
 draft: false
+aliases : ["about-us"]
+author: "Eklipsorz"
 ---
 
 ## 網站介紹
