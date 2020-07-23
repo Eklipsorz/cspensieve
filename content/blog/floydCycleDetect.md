@@ -127,3 +127,81 @@ src="$2T+1≡T$ ($mod\ λ$)"
 src="/img/floydCycleDetect/N2andCycle.png"
 alt="N = 2時的情況" >}}
 
+同樣的，由於只是單純增加循環外面的節點，不會影響著第一、二個觀察結果，而第三個結果中的兔子預期位置：
+
+{{< CenterText
+src="$H'=H+2$"
+>}}
+
+接著我們只要按照圖上位置來模擬他們移動就會發現他們的確也是會在同一點上會合，但這次是第$\lambda-2$個節點或者第8個節點上會合。如果考慮成$N=3$時，會發現會
+在第$\lambda-3$個節點或者第$7$個節點上會合，而$N=4$時，會發現在第$\lambda-4$個節點或者第$6$個節點上會合。
+
+
+那麼最後我們來試著考慮著$N=M$的情況，而M的範圍為$[1,∞)$，而定義成這範圍是由於我們只限定於不存在循環以外的
+點以及存在$M$個循環以外的點，在此只討論後者，前者已在$N=0$討論過。
+
+{{< CenterImage
+src="/img/floydCycleDetect/NMandCycle.png"
+alt="N = M時的情況" >}}
+
+在這$N=M$的情況下，會使得兔子預期位置變成：  
+{{< CenterText
+src="$H'=H+M$"
+>}}
+
+在這裡我們還不確定這種情況是否同樣地使烏龜和兔子會在同一點會合，所以我們先假設他們肯定能在某一點會合來找出矛盾或者驗證其正確性，換言之，先定義出這式子：
+
+{{< CenterText
+src="$H+M≡T$ ($mod\ λ$)"
+>}}
+
+或者
+
+{{< CenterText
+src="$2T+M≡T$ ($mod\ λ$)"
+>}}
+
+
+
+根據前面所述的第ㄧ、二觀察結果，兔子必須得至少繞ㄧ圈才有機會與烏龜會合，但這樣單純繞幾圈也只是與烏龜保持$M-(0.5\lambda+M)$
+個節點的距離，所以兔子和烏龜必須得多走個幾步才有機會會合，所以式子會變成如下：
+
+{{< CenterText
+src="$T=N_1\lambda+N_2$ (烏龜繞了$N_1$圈又$N_2$步)"
+>}}
+
+
+{{< CenterText
+src="$2(N_1\lambda+N_2)+M≡N_1\lambda+N_2$ ($mod\ \lambda$)"
+>}}
+
+根據$mod λ$，我們可以化簡成：
+
+{{< CenterText
+src="$2N_2+M≡N_2$ ($mod\ \lambda$)"
+>}}
+
+根據先前$N=2-4$情況得到的觀察結果，會發現都會在第$\lambda-N$個節點會合，那麼同樣地將其結果套用在上式時，
+
+{{< CenterText
+src="$N_2=\lambda-M$"
+>}}
+
+會發現式子會變成如下:
+
+{{< CenterText
+src="$2(\lambda-M)+M≡(\lambda-M)$ ($mod\ \lambda$)"
+>}}
+
+再稍微用$mod\ \lambda$來化簡，則會是：
+{{< CenterText
+src="$-M≡-M$ ($mod\ \lambda$)"
+>}}
+
+而這相當於在第$\lambda-M$個節點或者第$\lambda-N$個節點會合
+
+{{< CenterText
+src="$\lambda-M≡\lambda-M$ ($mod\ \lambda$)"
+>}}
+
+從這樣推論驗證了$N$在$[1,∞)$範圍內的節點數所構成循環時可以使兔子和烏龜在第$\lambda-N$個節點會合。
