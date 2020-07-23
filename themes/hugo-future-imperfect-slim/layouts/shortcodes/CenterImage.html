@@ -1,9 +1,18 @@
 
+<style>
+
+.center {
+  text-align: center;
+}
+
+</style>
+
+
 
 {{ $src := .Get "src" }}
 {{ $alt := .Get "alt" }}
 
-<div align="center">
+<div class="center">
   <img
     src="{{ $src }}"
     alt="{{ $alt }}"
