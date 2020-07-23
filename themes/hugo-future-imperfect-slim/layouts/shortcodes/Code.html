@@ -1,23 +1,29 @@
 
 <style>
 .CodeContext {
-  display: block;
-  overflow-x: auto;
-  padding: .5em;
-  color: #333;
-  background: #f8f8f8;
-  border-style: solid;
-  border-color: #000000;
+  	display: block;
+  	overflow-x: auto;
+  	padding: .5em;
+  	color: #333;
+  	background: #f8f8f8;
+ 	border-style: solid;
+  	border-color: #000000;
 }
 
+.title{
+	font-size: 1.25vw;
+  	text-align: center;
+}
 
 </style>
 
 
-{{ $src := .Get "src" }}
+{{ $title := .Get "title" }}
+{{ $text := .Get "text" }}
 
 
 <div class="CodeContext">
-  <p style="font-size:1.5vw"> {{ $src }}</p>
+  	<p class="title"> {{ $title }}</p>
+	<p style="font-size:1vw"> {{ $text }}</p>
 </div>
 

@@ -205,3 +205,9 @@ src="$\lambda-M≡\lambda-M$ ($mod\ \lambda$)"
 >}}
 
 從這樣推論驗證了$N$在$[1,∞)$範圍內的節點數所構成循環時可以使兔子和烏龜在第$\lambda-N$個節點會合。
+
+{{< Code
+title="補充"
+text="其中$\lambda-M$中的λ其實原本是考慮成$N’\lambda$，但由於最後還是會因爲$mod\ \lambda$而跟$\lambda-M$的最後結果一樣，且如果寫$N’\lambda-M$的話，會不容易理解，在這裏簡化成最後解。"
+>}}
+
