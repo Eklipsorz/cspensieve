@@ -1,7 +1,7 @@
 # For a description of these parameters, please visit the theme wiki.
 # https://github.com/pacollins/hugo-future-imperfect-slim/wiki/config.toml
 baseurl                 = "https://Eklipsorz.github.io/"
-DefaultContentLanguage  = "en"
+DefaultContentLanguage  = "zh-tw"
 title                   = "CS Pensieve"
 theme                   = "hugo-future-imperfect-slim"
 paginate                = 3
@@ -9,7 +9,6 @@ disqusShortname         = ""
 googleAnalytics         = ""
 pluralizeListTitles     = false
 disableLanguages        = [""]
-
 [outputs]
   home                  = ["html", "json"]
 
