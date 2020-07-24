@@ -175,7 +175,7 @@ src="$T=N_1\lambda+N_2$ (烏龜繞了$N_1$圈又$N_2$步)"
 src="$2(N_1\lambda+N_2)+M≡N_1\lambda+N_2$ ($mod\ \lambda$)"
 >}}
 
-根據$mod λ$，我們可以化簡成：
+根據$mod\ \lambda$，我們可以化簡成：
 
 {{< CenterText
 src="$2N_2+M≡N_2$ ($mod\ \lambda$)"
@@ -208,7 +208,7 @@ src="$\lambda-M≡\lambda-M$ ($mod\ \lambda$)"
 
 {{< Code
 title="補充："
-text="其中$\lambda-M$中的λ其實原本是考慮成$N’\lambda$，但由於最後還是會因爲$mod\ \lambda$而跟$\lambda-M$的最後結果一樣，且如果寫$N’\lambda-M$的話，會不容易理解，在這裏簡化成最後解。"
+text="其中$\lambda-M$中的\lambda其實原本是考慮成$N’\lambda$，但由於最後還是會因爲$mod\ \lambda$而跟$\lambda-M$的最後結果一樣，且如果寫$N’\lambda-M$的話，會不容易理解，在這裏簡化成最後解。"
 >}}
 
 
@@ -253,7 +253,7 @@ src="$2M_1+M≡\frac{\lambda}{2}+M_1$ ($mod\ \lambda$)"
 src="$M_1=\frac{\lambda}{2}-M$"
 >}}
 
-將這個假設結果代入式子"$2M_1+M≡\frac{\lambda}{2}+M_1$就變成：
+將這個假設結果代入式子$2M_1+M≡\frac{\lambda}{2}+M_1$就變成：
 
 {{< CenterText
 src="$-M≡-M$ ($mod\ \lambda$)"
@@ -295,3 +295,12 @@ src="$H+M≡T$ ($mod\ \lambda$)"
 的起點1至循環內的起點2的距離，而$N_2$是循環內的起點2至烏龜與兔子預計會合的點之間的距離（如下圖），而N為節點的總共數量，其中
 根據以下的第六個觀察結果會發現$N_2$是在烏龜花不到半圈得到的數值，所以$N≥N_1+N_2$。
 
+{{< CenterImage
+src="/img/floydCycleDetect/N1N2length.png"
+alt="$N_1和N_2的示意圖$" >}}
+
+空間複雜度：該方法本身不需要向系統索求額外記憶體空間或者內存來進行判斷，所以空間複雜度會是原本一般執行程式碼所需要用到的記憶體
+大小，也就是$O(1)$。
+
+## Conclusion
+我們稍微介紹這方法以及應用場景，並且在最後證明這方法的可行性，同時從證明過程得到五個有趣結果。
