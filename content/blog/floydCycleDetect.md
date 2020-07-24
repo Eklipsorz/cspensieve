@@ -288,6 +288,11 @@ src="$H+M≡T$ ($mod\ \lambda$)"
 節點，而第$4-5$個結果則是因爲第三個結果的推論過程而新增過來的。
 
 
+## Implementation
+程式碼連結：[bit.ly/2FKotVP](http://bit.ly/2FKotVP)  
+	
+使用EAFP程式碼風格來取代過度的if-else檢查，並從中提升速度，另外先讓在try區塊中的兔子多走一步以避免while迴圈判斷到錯誤的情況
+，同時這樣子的移動方式並不會改變兔子和烏龜的會合結果，只不過變成$M+1$個循環外節點的情況來移動。
 
 ## Performance
 
