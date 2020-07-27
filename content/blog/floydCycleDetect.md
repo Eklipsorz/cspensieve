@@ -230,13 +230,11 @@ text="其中$\lambda-M$中的$\lambda$其實原本是考慮成$N’\lambda$，�
 src="/img/floydCycleDetect/2length.png"
 alt="N = 考慮二種路線的長度" >}}
 
-，會發現只要$N$與$\lambda-N$相加就能構成循環長度，換言之，
+，會發現只要$N$與$\lambda-N$相加就能構成循環長度，換言之，從會合點到起點$2$的距離剛好是$N$個節點。
 
 {{< CenterImage
 src="/img/floydCycleDetect/3length.png"
 alt="N = 考慮三種路線的長度" >}}
-
-從會合點到起點$2$的距離剛好是$N$個節點。
 
 
 還有如果我們限制烏龜只能在循環內走不到一圈來和兔子會合，會得到一個有趣的觀察結果，其中烏龜走不到半圈時會使
