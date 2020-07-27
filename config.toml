@@ -24,8 +24,8 @@ disableLanguages        = [""]
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
 
   [params.meta]
-    description         = "A theme by HTML5 UP, ported by Julio Pescador. Slimmed and enhanced by Patrick Collins. Multilingual by StatnMap. Powered by Hugo."
-    author              = "HTML5UP and Hugo"
+    description         = "A pensieve which stores some knowledge about computer science"
+    author              = "Eklipsorz"
     favicon             = false
     svg                 = true
     faviconVersion      = "1"
