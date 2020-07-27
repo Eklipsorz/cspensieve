@@ -2,7 +2,11 @@
 title: "Introduction: Floyd Cycle Detection"
 date: 2020-07-21T15:05:34+08:00
 author: "Eklipsorz"
-description : "一個利用兩個Pointer來解決List上的循環問題"
+description : "一個利用兩個指標(Pointer)來解決List上的循環問題"
+keywords:
+- floydCycleDetect
+- Algorithm
+- 龜兔賽跑算法
 tags : [
     "Algorithm",
     "Cycle Detection",
