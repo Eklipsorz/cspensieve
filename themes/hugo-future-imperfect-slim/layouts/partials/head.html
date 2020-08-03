@@ -6,6 +6,7 @@
   {{- template "_internal/twitter_cards.html" . -}}
   {{- template "_internal/google_news.html" . -}}
   {{ partial "mathjax_loader.html" .}}
+  {{ partial "seo_schema" . }}
   {{- if .Site.Params.enableCDN -}}
     {{- if .Site.Params.highlightjs -}}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">{{- end -}}
     {{- range .Site.Params.cssFiles -}}
