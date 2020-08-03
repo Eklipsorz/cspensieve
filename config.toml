@@ -17,10 +17,6 @@ disableLanguages        = [""]
   changefreq = "monthly"
   filename = "sitemap.xml"
   priority = 0.5
-
-[permalinks]
-  post = "/blog/:year/"
-
 [outputs]
   home                  = ["html", "json"]
 [params]
