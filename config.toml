@@ -8,10 +8,10 @@ DefaultContentLanguage  = "zh-tw"
 title                   = "CS Pensieve"
 theme                   = "hugo-future-imperfect-slim"
 paginate                = 3
-disqusShortname         = ""
 googleAnalytics         = ""
 pluralizeListTitles     = false
 disableLanguages        = [""]
+disqusShortname 	= "ekliGithub"
 
 [sitemap]
   changefreq = "monthly"
