@@ -14,4 +14,7 @@
   </article>
   {{ .Render "comments" }}
   {{ .Render "pagination" }}
+  <div class="disqus markdown">
+  	{{ partial "disqus_loader.html" . }}
+  </div>
 {{ end }}
