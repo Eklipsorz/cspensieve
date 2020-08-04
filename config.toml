@@ -3,7 +3,7 @@
 baseurl                 = "https://Eklipsorz.github.io/"
 enableRobotsTXT 	= true
 canonifyURLs 		= true
-
+disqusShortname 	= "https-eklipsorz-github-io"
 DefaultContentLanguage  = "zh-tw"
 title                   = "CS Pensieve"
 theme                   = "hugo-future-imperfect-slim"
@@ -11,8 +11,7 @@ paginate                = 3
 googleAnalytics         = ""
 pluralizeListTitles     = false
 disableLanguages        = [""]
-disqusShortname 	= "ekliGithub"
-
+#disqusShortname 	= ""
 [sitemap]
   changefreq = "monthly"
   filename = "sitemap.xml"
