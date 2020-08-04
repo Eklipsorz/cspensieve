@@ -68,9 +68,37 @@ draft: true
 |Construct Binary Tree from Preorder and Inorder Traversal    |12      |
 |Flatten Binary Tree to Linked List     |12      |
 |Best Time to Buy and Sell Stock     |12      |
-|Trapping Rain Water    |12      |
-|Trapping Rain Water    |12      |
-|Trapping Rain Water    |12      |
-|Trapping Rain Water    |12      |
-|Trapping Rain Water    |12      |
+|Binary Tree Maximum Path Sum     |12      |
+|Longest Consecutive Sequence     |12      |
+|Single Number     |12      |
+|Copy List with Random Pointer    |12      |
+|Word Break     |12      |
+|Linked List Cycle    |12      |
+|Linked List Cycle II    |12      |
+|LRU Cache    |12      |
+|Sort List     |12      |
+|Maximum Product Subarray    |12      |
+|Min Stack     |12      |
+|Intersection of Two Linked Lists     |12      |
+|Majority Element    |12      |
+|House Robber    |12      |
+|Number of Islands     |12      |
+|Reverse Linked List    |12      |
+|Course Schedule     |12      |
+|Implement Trie (Prefix Tree)    |12      |
+|Word Search II     |12      |
+|Kth Largest Element in an Array     |12      |
+|Maximal Square     |12      |
+|Invert Binary Tree    |12      |
+|Kth Smallest Element in a BST    |12      |
+|Palindrome Linked List     |12      |
+|Lowest Common Ancestor of a Binary Tree     |12      |
+|Product of Array Except Self    |12      |
+|Sliding Window Maximum    |12      |
+|Search a 2D Matrix II    |12      |
+|Meeting Rooms II     |12      |
+|Perfect Squares    |12      |
+|Move Zeroes     |12      |
+|Find the Duplicate Number    |12      |
+|Find Median from Data Stream    |12      |
 
