@@ -2,7 +2,7 @@
 title: "Introduction: Floyd Cycle Detection"
 date: 2020-07-21T15:05:34+08:00
 author: "Eklipsorz"
-description : "一個利用兩個指標(Pointer)來解決List上的循環問題"
+description : "利用兩個指標(Pointer)來解決List上的循環問題"
 keywords:
 - floydCycleDetect
 - Algorithm
@@ -300,6 +300,20 @@ src="$H+N≡T$ ($mod\ \lambda$)"
 第$1$個觀察結果因爲本身不受循環以外的節點數影響，所以不會進行變動，但原本第$2-3$個結果會隨之影響，使之擴展成考慮成$M$個循環以外的
 節點，而第$4-5$個結果則是因爲第三個結果的推論過程而新增過來的。
 
+## Pseudo Code
+
+下圖是根據Floyd's Cycle Detection所描述的演算法而寫出的Pseudo Code，其中使用$next[i]$和$head[i]$來分別代表變數$i$的下一個節點以及
+其頭部節點，而NIL在這裡代表不存在任何節點。
+
+{{< CenterImage
+src="/img/floydCycleDetect/PseudoCode_hascycle.png"
+alt="Pseudo Code: hascycle" >}}
+
+
+該演算法以List為輸入參數，當List輸入進去時，會先設定其頭部的位置給兔子和烏龜這兩個變數，接著為了他們兩個變數能夠在不影響系統的情況下
+跑遍整個List結構，所以設定了While以及其條件$Hare\ \neq\ NIL$ and  $next[Hare] \neq NIL$，其條件主要會檢測目前兔子所走的位置是否能繼續走，
+最後兔子和烏龜會依照規則來走指定步數，當他們所在的位置是一樣時，就代表著此List結構確實存在循環而回傳True，反之兔子走到盡頭都沒遇到烏龜而
+回傳代表不存在循環的False。
 
 ## Implementation
 程式碼連結：[bit.ly/2FKotVP](http://bit.ly/2FKotVP)  
