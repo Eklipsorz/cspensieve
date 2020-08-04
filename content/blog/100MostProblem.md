@@ -100,5 +100,26 @@ draft: true
 |Perfect Squares    |12      |
 |Move Zeroes     |12      |
 |Find the Duplicate Number    |12      |
-|Find Median from Data Stream    |12      |
+|Serialize and Deserialize Binary Tree     |12      |
+|Longest Increasing Subsequence     |12      |
+|Remove Invalid Parentheses    |12      |
+|Best Time to Buy and Sell Stock with Cooldown     |12      |
+|Coin Change    |12      |
+|House Robber III     |12      |
+|Counting Bits    |12      |
+|Top K Frequent Elements    |12      |
+|Decode String    |12      |
+|Queue Reconstruction by Height    |12      |
+|Partition Equal Subset Sum    |12      |
+|Path Sum III     |12      |
+|Find All Anagrams in a String    |12      |
+|Find All Numbers Disappeared in an Array    |12      |
+|Target Sum    |12      |
+|Diameter of Binary Tree    |12      |
+|Subarray Sum Equals K    |12      |
+|Shortest Unsorted Continuous Subarray    |12      |
+|Merge Two Binary Trees     |12      |
+|Task Scheduler    |12      |
+|Palindromic Substrings    |12      |
+|Daily Temperatures     |12      |
 
