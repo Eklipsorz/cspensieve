@@ -23,7 +23,11 @@ draft: true
 
 ## Heap 概略
 
-1.  Structure Property：它是一種特殊的資料結構，其結構如同字面上的意思一樣，結構上的每個物件$Obj_i$會堆放在其他物件上：
+1.  Structure Property：它是一種特殊的資料結構，其結構如同字面上的意思一樣，結構上的每個物件$Obj_i$會堆放在其他物件上(如下圖):
+
+{{< CenterImage
+src="/img/heapinfo/2kheap.png"
+alt="擁有循環的List結構" >}}
 
 2.  Heap Order Property：根據物件所儲存的資料來堆放其他物件上，比如以每個物件所儲存的數值來比較大小，數值比較小的節點會
 堆放數值較大的節點上。
