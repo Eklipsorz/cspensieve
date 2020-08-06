@@ -2,7 +2,7 @@
 title: "LeetCode Study: Top 100 Liked Questions"
 date: 2020-08-05T15:05:34+08:00
 author: "Eklipsorz"
-description : "一個關於100個經典LeetCode題目的研究心得"
+description : "關於100個經典LeetCode題目的研究心得"
 keywords:
 - Algorithm
 - LeetCode
@@ -18,6 +18,8 @@ markup: "mmark"
 
 draft: false
 ---
+
+![](/img/100MostProblems/cover.jpg)
 
 為了追蹤自己曾寫過的題目以及對於其題目所想到的思路而建立以下表格，其中該表格的欄位分為題目和研究心得連結，研究心得連結是自己擁有的hackmd筆記連結，
 有些筆記可能還存在著一些瑕疵，這部分會在短期內完成修改，並且記錄其他題目。另外NIL代表著還未有對應的筆記連結，換言之，還沒開始寫那題目的筆記XD。
