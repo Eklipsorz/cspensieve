@@ -25,7 +25,8 @@ draft: true
 
 #### 粗略地介紹Heap的構造、特性、實現
 
-1.  Structure Property：它是一種特殊的資料結構，其結構如同字面上的意思一樣，結構上的每個物件$Obj_i$會堆放在其他物件上(如下圖):
+1. Structure Property：它是一種特殊的資料結構，其結構如同字面上的意思一樣，每個物件$Obj_i$會堆放其他物件上，最後形成一
+座堆狀物：
 
 {{< CenterImage
 src="/img/heapinfo/2kheap.png"
