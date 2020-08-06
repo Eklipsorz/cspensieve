@@ -20,7 +20,7 @@ markup: "mmark"
 draft: false
 ---
 
-
+![](/img/floydCycleDetect/cover.jpeg)
 
 當你想解決任何一個需要檢測在多個相互連接的元素是否存在著循環結構之場景，比如說  
 1. 道路模型。  
