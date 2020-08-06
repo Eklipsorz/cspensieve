@@ -27,7 +27,7 @@ draft: true
 
 {{< CenterImage
 src="/img/heapinfo/2kheap.png"
-alt="擁有循環的List結構" >}}
+alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
 
 2.  Heap Order Property：根據物件所儲存的資料來堆放其他物件上，比如以每個物件所儲存的數值來比較大小，數值比較小的節點會
 堆放數值較大的節點上。
@@ -37,3 +37,22 @@ alt="擁有循環的List結構" >}}
 4. 通常使用樹狀結構來實現，在這實現上不能夠違背前面三個提到的性質，實現上會有Initialization、Insert、Delete等Method。
 
 5. 應用：Priority Queue、Sorting。
+
+
+## Structure Property
+
+#### 定義該結構會是什麼
+
+在這個結構內，每個物件都堆放在其他物件上，進而使整體結構像是堆狀物，當我們指定被堆放的最大物件數時，我們會稱之為$k$-ary Heap，$k$為物件數
+，如果$k = 2$就代表著每個物件只能堆放在$0-2$個物件上(如下圖中的左半邊)，而如果$k = 3$就代表著每個物件只能堆放在$0-3$個物件上，不管$k$是為何
+，Heap下的每個節點會像下圖中那樣排列著，而圖中的obj指的就是堆放物，而$1-k$指的是被堆放物。
+
+
+{{< CenterImage
+src="/img/heapinfo/2kheapdetail.png"
+alt="表示k-ary Heap" >}}
+
+
+{{< CenterImage
+src="/img/heapinfo/makeabigone.png"
+alt="表示k-ary Heap" >}}
