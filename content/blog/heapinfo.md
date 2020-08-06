@@ -81,4 +81,8 @@ alt="表示多個小山組成一座大山" >}}
 
 ## How to get object from the structure
 
+基本上會先取得該結構上的頂端物件來盡量不破壞Structure Property，同時使用已在Heap的物件來代替頂端物件來維持著兩種特性，另外當我們想從多個物件中找
+尋擁有最小值或最大值的物件時，該結構會很有效地幫助我們尋找，因爲頂端物件不是擁有最小值的物件，就是擁有最大值的物件。
 
+## Heap Example
+在這個章節會以Binary Heap以及它帶有的Method來更清楚地介紹Heap
