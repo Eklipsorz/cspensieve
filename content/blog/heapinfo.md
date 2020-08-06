@@ -19,9 +19,11 @@ markup: "mmark"
 draft: true
 ---
 
-本文會嘗試用Heap的意思來重新介紹Heap結構以及它的概念是如何被實作的。
+![](/img/heapinfo/cover.jpg)
 
 ## Heap 概略
+
+#### 粗略地介紹Heap的構造、特性、實現
 
 1.  Structure Property：它是一種特殊的資料結構，其結構如同字面上的意思一樣，結構上的每個物件$Obj_i$會堆放在其他物件上(如下圖):
 
