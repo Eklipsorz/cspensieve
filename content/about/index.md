@@ -11,7 +11,7 @@ author: "Eklipsorz"
 ## 網站介紹
 
 我是一位熱愛知識和實踐的平凡人，在追求著兩者的期間記錄了不少有趣的研究心得以及程式作品，研究心得有哥德爾不完備定理、Floyd's Cycle Detection、
-Catalan Number和括號子集合的關係樹旋轉緣由等心得，而程式作品有針對多台Xen虛擬機之間的動態記憶體分配、RMS/EDF Schedule Algorithm的工作模擬，
+Catalan Number和括號子集合的關係、樹旋轉緣由等心得，而程式作品有針對多台Xen虛擬機之間的動態記憶體分配、RMS/EDF Schedule Algorithm的工作模擬，
 只可惜那期間都用紙筆和私有的Evernote筆記去紀錄過程，這樣無法和人分享這些知識，為了解決這問題，就建立了儲思盆來重新記錄這些事物，希望有朝一日
 遇到同好一起來討論這些XD
 
