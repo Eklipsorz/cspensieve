@@ -88,4 +88,24 @@ alt="表示多個小山組成一座大山" >}}
 尋擁有最小值或最大值的物件時，該結構會很有效地幫助我們尋找，因爲頂端物件不是擁有最小值的物件，就是擁有最大值的物件。
 
 ## Heap Example
-在這個章節會以Binary Heap以及它帶有的Method來更清楚地介紹Heap
+
+#### 以Binary Heap以及它帶有的Method來更清楚地介紹Heap
+
+根據Structure Property談到的定義：當我們指定被堆放的物件數時，我們會稱之為k-ary Heap，在這裡如果我們要堆放的物件數是2個時，我們會稱之為Binary Heap
+，我們可以透過Binary Tree的左右子樹節點就能表示，換言之，每個節點能夠連接兩個相同型態的節點。
+
+在Binary Tree下的Structure Property和Heap Order Property這兩個性質會在保持著Heap的原有性質的情況下更加強調Binary Tree的實作。在Structure Property上，
+會為了更加簡單地透過Array來實作Binary Tree而強調該樹狀結構必須是Complete Tree為原則，換言之，除了最後一層的節點之外，每層的節點數都必須是$2^k$個節點，
+而$k$是表示第$k$個階層。
+
+由樹狀結構構成的Heap更加像是堆狀物，會強調該樹狀結構為Complete Tree，以Binary的表示圖(下圖)為例，除了最後一層之外，每個節點都會有兩個子節點，
+
+
+{{< CenterImage
+src="/img/heapinfo/completeTree.png"
+alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
+
+
+
+
+
