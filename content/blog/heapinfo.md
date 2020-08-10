@@ -92,18 +92,26 @@ alt="表示多個小山組成一座大山" >}}
 #### 以Binary Heap以及它帶有的Method來更清楚地介紹Heap
 
 根據Structure Property談到的定義：當我們指定被堆放的物件數時，我們會稱之為k-ary Heap，在這裡如果我們要堆放的物件數是2個時，我們會稱之為Binary Heap
-，我們可以透過Binary Tree的左右子樹節點就能表示，換言之，每個節點能夠連接兩個相同型態的節點。
+，我們可以透過Binary Tree的左右子樹節點就能表示，換言之，每個節點能夠連接兩個相同型態的節點。在Binary Tree下的Structure Property和Heap Order Property 
+這兩個性質會在保持著Heap的原有性質的情況下更加強調Binary Tree的實作。
 
-在Binary Tree下的Structure Property和Heap Order Property這兩個性質會在保持著Heap的原有性質的情況下更加強調Binary Tree的實作。在Structure Property上，
-會為了更加簡單地透過Array來實作Binary Tree而強調該樹狀結構必須是Complete Tree為原則，換言之，除了最後一層的節點之外，每層的節點數都必須是$2^k$個節點，
-而$k$是表示第$k$個階層。
+### Structure Property in Binary Tree
 
-由樹狀結構構成的Heap更加像是堆狀物，會強調該樹狀結構為Complete Tree，以Binary的表示圖(下圖)為例，除了最後一層之外，每個節點都會有兩個子節點，
+在Structure Property上，會為了更加簡單地透過Array來實作Binary Tree而強調該樹狀結構必須是Complete Tree為原則，換言之，除了最後一層的節點之外，每層的
+節點數都必須是$2^k$個節點，而$k$是表示第$k$個階層，而最後一層的節點數可以不必是$2^k$個，但從左至右的節點必須是連續的，中間還是得要節點，不能是什麼
+都沒有。
 
+當我們依照這樣實作規則製作出Complete Binary Tree並且由上層來依序給予序號(如下圖)，會發現每個節點$i$的子節點會是節點$2i$或者節點$2i+1$，這時我們就可以
 
 {{< CenterImage
 src="/img/heapinfo/completeTree.png"
-alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
+alt="表示Complete Tree" >}}
+
+直接宣告一個固定大小的陣列來實作Binary Tree，並且利用節點與其子節點的序號關係來存取，index為1的記憶體空間為root節點，而root節點的子節點就是index為2~3的
+記憶體空間，當我們想存取某節點$i$的子節點時，便直接朝著index為$2i$以及$2i+1$的記憶體空間來存取。
+
+
+### Heap Order Property in Binary Tree
 
 
 
