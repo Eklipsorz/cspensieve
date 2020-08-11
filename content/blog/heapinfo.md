@@ -98,11 +98,26 @@ Property 這兩個性質會在保持著Heap的原有性質的情況下更加強�
 ### BT: Structure Property
 
 在Structure Property上，會為了更加簡單地透過Array來實作Binary Tree而強調該樹狀結構必須是Complete Tree為原則，換言之，除了最後一層的節點之外，每層的
-節點數都必須是$2^k$個節點，而$k$是表示第$k$個階層，而最後一層的節點數可以少於 $2^m$ ($m$為最後一層的階層第次) 個，但從左至右的節點必須是連續的(如下圖)
+節點數都必須是$2^k$個節點，而$k$是表示第$k$個階層，而最後一層的節點數可以少於 $2^m$ ($m$為最後一層的階層第次) 個，舉例來說，我們會預期最後一層的節
+點位置會是下圖，這些白圈並沒有節點而只是代表著預期位置，
+
+{{< CenterImage
+src="/img/heapinfo/expectedNodes.png"
+alt="最後一層的預期節點位置" >}}
 
 
- 
-，不能是像如下圖這樣，中間沒有任何節點可以保持連續性。
+當指定該樹狀結構為Complete Tree時，節點位置$A1$至$AM$之間必須是都不存在節點或者節點$A1$至某個節點之間都存在著節點，若是後者的話，會像是下圖左右兩邊，
+左邊代表著$A1$至某個節點之間都存在著節點，而右邊會是全部的位置都被節點填滿。
+
+{{< CenterImage
+src="/img/heapinfo/continuousNodes.png"
+alt="最後一層的預期節點位置" >}}
+
+然而中間沒有任何節點可以保持連續性。
+
+{{< CenterImage
+src="/img/heapinfo/discontinuousNodes.png"
+alt="表示Complete Tree" >}}
 
 
 
