@@ -117,7 +117,7 @@ alt="最後一層的預期節點位置" >}}
 
 {{< CenterImage
 src="/img/heapinfo/discontinuousNodes.png"
-alt="節點$A1$至某個節點之間的位置必須都有節點" >}}
+alt="節點$A1$至某個節點位置之間的位置必須都有節點" >}}
 
 
 當我們依照這樣實作規則製作出Complete Binary Tree並且由上層來依序給予序號(如下圖)，會發現每個節點$i$的子節點會是節點$2i$或者節點$2i+1$，這時我們就可以
@@ -140,3 +140,16 @@ Heap Order Property在這裡會以數值系統來比較並且採用以Min Heap�
 
 而當我們要從Heap結構取出物件時，便是拿Binary Tree上的root節點，並且從剩餘節點中挑出適當的節點來頂替root節點以維持Structure Property和Heap Order Property這
 兩個性質。
+
+
+
+### BT: Implementation
+
+#### 我們粗略地建立了一份有關Heap的ADT並按照ADT來寫出對應的Pseudo Code。
+
+在這ADT中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，
+
+{{< CenterImage
+src="/img/heapinfo/heapADT.png"
+alt="ADT: heap structure" >}}
+
