@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage{amsmath}
+%\usepackage{algorithm}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+
+
+%\usepackage{amssymb}
+%
+%\usepackage{algorithmic}
+
+
+
+
+
+
+
+\begin{document}
+\begin{algorithm}
+    
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \underline{function isEmpty} $(h)$\\
+    \Input{an array of size n+1}
+    \Output{boolean value}
+    \eIf{$n>0$}
+      {
+        return $false$\\
+      }
+      {
+        return $true$\\
+      }
+    
+    \caption{check whether a heap is empty.}
+\end{algorithm}
+
+\begin{algorithm}
+    
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \underline{function top} $(h)$\\
+    \Input{an array of size n+1}
+    \Output{an object from the heap}
+        return $h[1]$\\
+    \caption{return a root object.}
+\end{algorithm}
+
+
+
+\begin{algorithm}
+    
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \underline{function top} $(h, item)$\\
+    \Input{an array of size n+1, an element}
+    \Output{nothing}
+        $h[++n] = item$\\
+        shiftUp($h$, $n$)\\
+    \caption{insert an object to the heap}
+    
+    \BlankLine
+    \BlankLine
+    
+    \underline{function shiftUp} $(h, n)$\\
+    \Input{an array of size n+1, n}
+    \Output{nothing}
+    $NewElement = h[n]$\\
+    $h[0] = -\infty$\\
+    \While{$NewElement < h[\frac{n}{2}]$}{
+        $h[n] = h[\frac{n}{2}]$\\
+        $n = \frac{n}{2}$
+    }
+    $h[n] = NewElement$
+    
+\end{algorithm}
+
+
+\begin{algorithm}
+    
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \underline{function DeleteMin} $(h)$\\
+    \Input{an array of size n+1}
+    \Output{an object}
+        $MinObject = top(h)$\\
+        shiftDown($h$, $n$)\\
+        return $MinObject$\\
+    \caption{return an object with minimal value}
+    
+    \BlankLine
+    \BlankLine
+    
+    \underline{function shiftDown} $(h, n)$\\
+    \Input{an array of size n+1, n}
+    \Output{nothing}
+    $LastElement = h[n--]$\\
+    $i = 1$\\
+    
+    \While{$i*2 \leq n$}{
+        $child = i*2$\\
+        \If{$child \neq n\ And\ h[child] > h[child+1]$}
+        {
+            $child = child + 1$\\
+        }
+        
+        \eIf{$h[child] > LastElement$}
+        {
+            break\\
+        }
+        {
+            $h[i] = h[child]$\\
+        }
+        
+        $i = child$\\
+    
+    }
+    
+\end{algorithm}
+
+\end{document} 
