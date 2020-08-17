@@ -168,5 +168,17 @@ src="/img/heapinfo/Heap_isFullAlg.png"
 alt="Algorithm: isFull function" >}}
 
 
+而$top$函式則是固定獲得heap結構的頂端物件，在這裡以陣列中的第1個位置上的物件來表示頂端物件，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$和$i/2$拿來正確地
+計算，因此都跳過該位置並拿它下一個位置當作是頂端物件。
 
+{{< CenterImage
+src="/img/heapinfo/Heap_topAlg.png"
+alt="Algorithm: top function" >}}
 
+{{< CenterImage
+src="/img/heapinfo/Heap_InsertAlg.png"
+alt="Algorithm: Insert function" >}}
+
+{{< CenterImage
+src="/img/heapinfo/Heap_DeleteMinAlg.png"
+alt="Algorithm: DeleteMin function" >}}
