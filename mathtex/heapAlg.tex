@@ -22,7 +22,8 @@
 
     \underline{function isEmpty} $(h)$\\
     \Input{an array of size n+1}
-    \Output{boolean value}
+    \Output{true: empty/false: is not empty}
+    $n \leftarrow getHeapSize(h)$ \tcp{get current size of the heap $h$}
     \eIf{$n>0$}
       {
         return $false$\\
@@ -33,6 +34,33 @@
     
     \caption{check whether a heap is empty.}
 \end{algorithm}
+
+
+\begin{algorithm}
+    
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+
+    \underline{function isFull} $(h)$\\
+    \Input{an array of size n+1}
+    \Output{true: full/false: is not full}
+    $n \leftarrow getHeapSize(h)$ \tcp{get current size of the heap $h$}
+    $MaxSize \leftarrow getHeapMaxSize(h)$ \tcp{get max size of the heap $h$}
+    \eIf{$n\ is\ equal\ to\ MaxSize$}
+      {
+        return $true$\\
+      }
+      {
+        return $false$\\
+      }
+    
+    \caption{check whether a heap is full.}
+\end{algorithm}
+
+
+
+
+
 
 \begin{algorithm}
     
@@ -55,9 +83,17 @@
 
     \underline{function Insert} $(h, item)$\\
     \Input{an array of size n+1, an element}
-    \Output{nothing}
-        $h[++n] = item$\\
+    \Output{true: successfully insert/false: failed to insert}
+        \If{$isFull(h)$ is true}
+        {
+            return false\\
+        }
+        
+        $n \leftarrow getHeapSize(h)$ \tcp{get current size of the heap $h$}
+        $n \leftarrow n + 1$\\
+        $h[n] \leftarrow item$\\
         shiftUp($h$, $n$)\\
+        return true\\
     \caption{insert an object to the heap}
     
     \BlankLine
@@ -66,13 +102,13 @@
     \underline{function shiftUp} $(h, n)$\\
     \Input{an array of size n+1, n}
     \Output{nothing}
-    $NewElement = h[n]$\\
-    $h[0] = -\infty$\\
+    $NewElement \leftarrow h[n]$\\
+    $h[0] \leftarrow -\infty$\\
     \While{$NewElement < h[\frac{n}{2}]$}{
-        $h[n] = h[\frac{n}{2}]$\\
-        $n = \frac{n}{2}$
+        $h[n] \leftarrow h[\frac{n}{2}]$\\
+        $n \leftarrow \frac{n}{2}$
     }
-    $h[n] = NewElement$
+    $h[n] \leftarrow NewElement$
     
 \end{algorithm}
 
@@ -85,7 +121,14 @@
     \underline{function DeleteMin} $(h)$\\
     \Input{an array of size n+1}
     \Output{an object}
-        $MinObject = top(h)$\\
+        
+        \If{$isEmpty(h)$ is true}
+        {
+            return a NULL object\\
+        }
+    
+        $n \leftarrow getHeapSize(h)$ \tcp{get current size of the heap $h$}
+        $MinObject \leftarrow top(h)$\\
         shiftDown($h$, $n$)\\
         return $MinObject$\\
     \caption{return an object with minimal value}
@@ -96,14 +139,15 @@
     \underline{function shiftDown} $(h, n)$\\
     \Input{an array of size n+1, n}
     \Output{nothing}
-    $LastElement = h[n--]$\\
-    $i = 1$\\
+    $LastElement \leftarrow h[n]$\\
+    $n \leftarrow n - 1$ \\
+    $i \leftarrow 1$\\
     
     \While{$i*2 \leq n$}{
-        $child = i*2$\\
+        $child \leftarrow i*2$\\
         \If{$child \neq n\ And\ h[child] > h[child+1]$}
         {
-            $child = child + 1$\\
+            $child \leftarrow child + 1$\\
         }
         
         \eIf{$h[child] > LastElement$}
@@ -111,14 +155,13 @@
             break\\
         }
         {
-            $h[i] = h[child]$\\
+            $h[i] \leftarrow h[child]$\\
         }
         
-        $i = child$\\
+        $i \leftarrow child$\\
     
     }
-
-   $h[i] = LastElement$\\
+    $h[i] \leftarrow LastElement$\\
 \end{algorithm}
 
 \end{document} 
