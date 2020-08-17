@@ -145,11 +145,28 @@ Heap Order Property在這裡會以數值系統來比較並且採用以Min Heap�
 
 ### BT: Implementation
 
-#### 我們粗略地建立了一份有關Heap的ADT並按照ADT來寫出對應的Pseudo Code。
+#### 定義了Heap的ADT並按照ADT來寫出對應的Pseudo Code。
 
-在這ADT中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，
+在這ADT(如下圖)中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，首先我們可以透過在用Binary Tree實作時強調的性質直接將每個Heap當成固定大小的
+陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$被視為Heap結構裡的基本元件，換言之Heap是用基本元件來構成的，而每個$item$會存下多筆不同
+類型的資料，最後$n$則是正整數(包含0)，定義陣列所擁有的$item$之總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數並放入$n$.
 
 {{< CenterImage
 src="/img/heapinfo/heapADT.png"
 alt="ADT: heap structure" >}}
+
+
+函式部分則有$isEmpty$、$isFull$、$top$、$insert$以及$DeleteMin$等基本函式，$isEmpty$和$isFull$(如下圖表示兩個演算法)會根據結構內$item$的總數來判別該heap是否空或者是
+否滿，當總數(此時由$n$變數存放)等於0時，就表示heap結構沒有任何$item$；而當總數等於該heap結構能存放的容量$MaxSize$時，就表示heap結構已經存滿$item$。
+
+{{< CenterImage
+src="/img/heapinfo/Heap_isEmptyAlg.png"
+alt="Algorithm: isEmpty function" >}}
+
+{{< CenterImage
+src="/img/heapinfo/Heap_isFullAlg.png"
+alt="Algorithm: isFull function" >}}
+
+
+
 
