@@ -176,15 +176,47 @@ chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一
 src="/img/heapinfo/Heap_topAlg.png"
 alt="Algorithm: top function" >}}
 
-接著$Insert$函式會在第5、6、10行預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，接著透
-過第7行的$shiftUp$拿新增節點對應的parent節點與$NewElement$比較$item$之數值，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點裡，而此時parent節點便
-形成空值或者無意義的資料，接著以該parent節點為主取得他的parent節點所存下的$item$並且與$NewElement$比較，這樣的流程持續到當$NewElement$比較大時而停止，此時我們可以利
-用第16行來放入$NewElement$至擁有無意義資料的parent節點，而這樣的安排剛好可以滿足Structure Property以及Heap Order Property這兩者性質。
+$Insert$函式(如下圖所示)會在維持前面所述的兩種性質下將$item$放入該結構中，首先該算法會在在第5、6、10行預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個
+空節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，
 
 {{< CenterImage
 src="/img/heapinfo/Heap_InsertAlg.png"
 alt="Algorithm: Insert function" >}}
 
+其結果如下所示：
+
+{{< CenterImage
+src="/img/heapinfo/nplus1Node.png"
+alt="Algorithm: Insert function" >}}
+
+圖中的左邊是新增空節點之前，而右邊則是之後的結果，接下來的過程中將會用白圈代表著目前是空值的節點，而第7行的$shiftUp$(過程如下圖)拿新增節點對應的parent節點(為下圖的橘圈)
+與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入parent的
+$item$，而此時的白圈將由原本的parent來替代，接著我們再以目前白圈的parent節點來和$NewElement$進行第二次的$item$之數值比較，若parent節點還是比較大時，則會像第一次那樣，
+原本的白圈被此時的parent所存下的$item$替代，而parent節點則以白圈來替代，
+
+{{< CenterImage
+src="/img/heapinfo/shiftUp14.png"
+alt="Algorithm: Insert function" >}}
+
+
+這樣的流程持續到當$NewElement$比較大時，此時的結果會像是如下圖這樣，代表橘圈的節點擁有比較小的$item$，而白圈下的節點都擁有著比$NewElement$還大的$item$，
+
+{{< CenterImage
+src="/img/heapinfo/shiftUpBeforeEnd.png"
+alt="Algorithm: Insert function" >}}
+
+而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。
+
+{{< CenterImage
+src="/img/heapinfo/shiftUpAfterEnd.png"
+alt="Algorithm: Insert function" >}}
+
+
+
+
+最後的$DeleteMin$函式會在第5、6行做一些前置動作並且先取得頂端物件好在第8行進行回傳，而第7行呼叫的$shiftDown$則是負責替取出頂端物件後的結構作些重整好有節點能夠頂替頂端
+物件並且維持前面所提到的兩個性質，在$shiftDown$函式中會先取得heap結構中的最後一個物件$LastElement$並執行$n-1$方便不包含其物件，接著以當前存有頂端物件的節點位置為主來和
+它的child節點進行比較，當child節點其中一個比較小時，便放入目前存放空值或者無意義冗餘$item$的節點，並且原本child
 {{< CenterImage
 src="/img/heapinfo/Heap_DeleteMinAlg.png"
 alt="Algorithm: DeleteMin function" >}}
