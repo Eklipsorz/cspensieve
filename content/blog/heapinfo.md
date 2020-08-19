@@ -207,6 +207,8 @@ alt="Insert Algorithm: meet termination condition" >}}
 
 而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。
 
+補充：從這樣的流程來看，我們一直不斷往上移動白圈直到移動到適當位置，並放入$NewElement$至白圈內部，所以將此處理方式命名為$shiftUp$
+
 {{< CenterImage
 src="/img/heapinfo/shiftUpAfterEnd.png"
 alt="Insert Algorithm: Insert $NewElement$ into the empty node" >}}
@@ -217,6 +219,30 @@ alt="Insert Algorithm: Insert $NewElement$ into the empty node" >}}
 最後的$DeleteMin$函式會在第5、6行做一些前置動作並且先取得頂端物件好在第8行進行回傳，而第7行呼叫的$shiftDown$則是負責替取出頂端物件後的結構作些重整好有節點能夠頂替頂端
 物件並且維持前面所提到的兩個性質，在$shiftDown$函式中會先取得heap結構中的最後一個物件$LastElement$並執行$n-1$方便不包含其物件，接著以當前存有頂端物件的節點位置為主來和
 它的child節點進行比較，當child節點其中一個比較小時，便放入目前存放空值或者無意義冗餘$item$的節點，並且原本child
+
 {{< CenterImage
 src="/img/heapinfo/Heap_DeleteMinAlg.png"
+alt="Algorithm: DeleteMin function" >}}
+
+
+
+
+{{< CenterImage
+src="/img/heapinfo/DeleteMin_origin.png"
+alt="Algorithm: DeleteMin function" >}}
+
+{{< CenterImage
+src="/img/heapinfo/getTopAndLast.png"
+alt="Algorithm: DeleteMin function" >}}
+
+{{< CenterImage
+src="/img/heapinfo/shiftDown14.png"
+alt="Algorithm: DeleteMin function" >}}
+
+{{< CenterImage
+src="/img/heapinfo/shiftDownBeforeEnd.png"
+alt="Algorithm: DeleteMin function" >}}
+
+{{< CenterImage
+src="/img/heapinfo/shiftDownAfterEnd.png"
 alt="Algorithm: DeleteMin function" >}}
