@@ -187,7 +187,7 @@ alt="Algorithm: Insert function" >}}
 
 {{< CenterImage
 src="/img/heapinfo/nplus1Node.png"
-alt="Algorithm: Insert function" >}}
+alt="Insert Algorithm: add a new empty node in a heap" >}}
 
 圖中的左邊是新增空節點之前，而右邊則是之後的結果，接下來的過程中將會用白圈代表著目前是空值的節點，而第7行的$shiftUp$(過程如下圖)拿新增節點對應的parent節點(為下圖的橘圈)
 與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入parent的
@@ -196,20 +196,20 @@ $item$，而此時的白圈將由原本的parent來替代，接著我們再以�
 
 {{< CenterImage
 src="/img/heapinfo/shiftUp14.png"
-alt="Algorithm: Insert function" >}}
+alt="Insert Algorithm: demo how to shift down" >}}
 
 
 這樣的流程持續到當$NewElement$比較大時，此時的結果會像是如下圖這樣，代表橘圈的節點擁有比較小的$item$，而白圈下的節點都擁有著比$NewElement$還大的$item$，
 
 {{< CenterImage
 src="/img/heapinfo/shiftUpBeforeEnd.png"
-alt="Algorithm: Insert function" >}}
+alt="Insert Algorithm: meet termination condition" >}}
 
 而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。
 
 {{< CenterImage
 src="/img/heapinfo/shiftUpAfterEnd.png"
-alt="Algorithm: Insert function" >}}
+alt="Insert Algorithm: Insert $NewElement$ into the empty node" >}}
 
 
 
