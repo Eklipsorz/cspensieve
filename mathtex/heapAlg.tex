@@ -88,9 +88,8 @@
         {
             return false\\
         }
-        
-        $n \leftarrow getHeapSize(h)$ \tcp{get current size of the heap $h$}
-        $n \leftarrow n + 1$\\
+       	\tcp{get current size of the heap $h$ and the size plus 1}
+        $n \leftarrow getHeapSize(h) + 1$\\ 
         $h[n] \leftarrow item$\\
         shiftUp($h$, $n$)\\
         return true\\
