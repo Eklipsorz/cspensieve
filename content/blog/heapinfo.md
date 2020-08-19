@@ -176,10 +176,10 @@ chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一
 src="/img/heapinfo/Heap_topAlg.png"
 alt="Algorithm: top function" >}}
 
-接著$Insert$函式會預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，接著拿新增節點對應的
-parent節點與$NewElement$比較$item$之數值，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點裡，而此時parent節點便形成空值或者無意義的資料，接著以該
-parent節點為主取得他的parent節點所存下的$item$並且與$NewElement$比較，這樣的流程持續到當$NewElement$比較大時而停止，此時我們便可以放入$NewElement$至擁有無意義資料的
-parent節點，而這樣的安排剛好可以滿足Structure Property以及Heap Order Property這兩者性質。
+接著$Insert$函式會在第5、6、10行預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，接著透
+過第7行的$shiftUp$拿新增節點對應的parent節點與$NewElement$比較$item$之數值，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點裡，而此時parent節點便
+形成空值或者無意義的資料，接著以該parent節點為主取得他的parent節點所存下的$item$並且與$NewElement$比較，這樣的流程持續到當$NewElement$比較大時而停止，此時我們可以利
+用第16行來放入$NewElement$至擁有無意義資料的parent節點，而這樣的安排剛好可以滿足Structure Property以及Heap Order Property這兩者性質。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_InsertAlg.png"
