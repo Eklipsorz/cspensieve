@@ -147,9 +147,10 @@ Heap Order Property在這裡會以數值系統來比較並且採用以Min Heap�
 
 #### 定義了Heap的ADT並按照ADT來寫出對應的Pseudo Code。
 
-在這ADT(如下圖)中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，首先我們可以透過在用Binary Tree實作時強調的性質直接將每個Heap當成固定大小的
-陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$會在Heap結構中每個節點會儲存的資料，而每個$item$可以會是不同型態的資料，在這裡將它設定
-成$Element$型態以保持彈性，最後$n$則是正整數(包含0)，定義陣列所擁有的$item$之總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數並放入$n$.
+在這ADT(如下圖)中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，在這裡我們以建構Min Heap為主，首先我們可以透過在用Binary Tree實作時強調的性
+質直接將每個Heap當成固定大小的陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$會在Heap結構中每個節點會儲存的資料，而每個$item$可以會是
+不同型態的資料，在這裡將它設定成$Element$型態以保持彈性，最後$n$則是正整數(包含0)，定義陣列所擁有的$item$之總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數
+並放入$n$.
 
 {{< CenterImage
 src="/img/heapinfo/heapADT.png"
@@ -175,7 +176,10 @@ chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一
 src="/img/heapinfo/Heap_topAlg.png"
 alt="Algorithm: top function" >}}
 
-接著$Insert$函式會預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)
+接著$Insert$函式會預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，接著拿新增節點對應的
+parent節點與$NewElement$比較$item$之數值，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點裡，而此時parent節點便形成空值或者無意義的資料，接著以該
+parent節點為主取得他的parent節點所存下的$item$並且與$NewElement$比較，這樣的流程持續到當$NewElement$比較大時而停止，此時我們便可以放入$NewElement$至擁有無意義資料的
+parent節點，而這樣的安排剛好可以滿足Structure Property以及Heap Order Property這兩者性質。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_InsertAlg.png"
