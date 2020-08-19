@@ -148,15 +148,15 @@ Heap Order Property在這裡會以數值系統來比較並且採用以Min Heap�
 #### 定義了Heap的ADT並按照ADT來寫出對應的Pseudo Code。
 
 在這ADT(如下圖)中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，首先我們可以透過在用Binary Tree實作時強調的性質直接將每個Heap當成固定大小的
-陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$被視為Heap結構裡的基本元件，換言之Heap是用基本元件來構成的，而每個$item$會存下多筆不同
-類型的資料，最後$n$則是正整數(包含0)，定義陣列所擁有的$item$之總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數並放入$n$.
+陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$會在Heap結構中每個節點會儲存的資料，而每個$item$可以會是不同型態的資料，在這裡將它設定
+成$Element$型態以保持彈性，最後$n$則是正整數(包含0)，定義陣列所擁有的$item$之總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數並放入$n$.
 
 {{< CenterImage
 src="/img/heapinfo/heapADT.png"
 alt="ADT: heap structure" >}}
 
 
-函式部分則有$isEmpty$、$isFull$、$top$、$insert$以及$DeleteMin$等基本函式，$isEmpty$和$isFull$(如下圖表示兩個演算法)會根據結構內$item$的總數來判別該heap是否空或者是
+函式部分則有$isEmpty$、$isFull$、$top$、$insert$以及$DeleteMin$等基本函式，$isEmpty$和$isFull$(如下圖表示兩個演算法)會根據結構內的節點總數來判別該heap是否空或者是
 否滿，當總數(此時由$n$變數存放)等於0時，就表示heap結構沒有任何$item$；而當總數等於該heap結構能存放的容量$MaxSize$時，就表示heap結構已經存滿$item$。
 
 {{< CenterImage
@@ -168,12 +168,14 @@ src="/img/heapinfo/Heap_isFullAlg.png"
 alt="Algorithm: isFull function" >}}
 
 
-而$top$函式則是固定獲得heap結構的頂端物件，在這裡以陣列中的第1個位置上的物件來表示頂端物件，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$和$i/2$拿來正確地
-計算，因此都跳過該位置並拿它下一個位置當作是頂端物件。
+而$top$函式則是固定獲得heap結構的頂端物件，在這裡以陣列中的第1個位置上的物件來表示頂端物件，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$和$i/2$來取得
+chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一個位置當作是頂端物件。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_topAlg.png"
 alt="Algorithm: top function" >}}
+
+接著$Insert$函式會預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)
 
 {{< CenterImage
 src="/img/heapinfo/Heap_InsertAlg.png"
