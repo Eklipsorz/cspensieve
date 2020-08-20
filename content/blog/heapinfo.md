@@ -1,6 +1,6 @@
 ---
 title: "Another Point of View： Heap Structure"
-date: 2020-08-20T20:25:08+08:00
+date: 2020-08-05T20:25:08+08:00
 author: "Eklipsorz"
 description : "另種觀點來看待Heap結構"
 keywords:
@@ -16,7 +16,7 @@ categories : [
 
 markup: "mmark"
 
-draft: false
+draft: true
 ---
 
 ![](/img/heapinfo/cover.jpg)
@@ -41,6 +41,7 @@ alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
 
 5. 應用：Priority Queue、Sorting。
 
+Note: 似乎有很多人誤解Heap結構就是Tree結構，但其實這兩者是獨立的存在，Heap只是描述著堆狀結構，而Tree只是剛好可以拿來實現堆狀結構的另種結構。
 
 ## Structure Property
 
@@ -259,3 +260,9 @@ alt="Algorithm: DeleteMin function" >}}
 {{< CenterImage
 src="/img/heapinfo/shiftDownAfterEnd.png"
 alt="Algorithm: DeleteMin function" >}}
+
+
+## 結論
+雖然Heap結構上在每本書中都會有一定程度上的解釋，但大部分都把Heap結構視作為另一種Tree結構來解釋，而非直接強調兩者是獨立的結構來說明。為此，我寫下了這篇文章心得簡單地描述
+Heap結構和Tree結構兩者間的獨立性以及強調Tree結構只不過是實現Heap結構的其中一個手段，接著再用Binary Tree來構築一個Heap結構以及它會有什麼樣的基本操作。另外程式碼的部分我不
+會使用某種特定語言來侷限於看得懂語法的人，而是直接採用比較中立的pseudo code來說明如何用Binary Tree構築。
