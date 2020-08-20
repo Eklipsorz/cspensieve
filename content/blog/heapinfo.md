@@ -188,7 +188,7 @@ alt="Algorithm: Insert function" >}}
 
 {{< CenterImage
 src="/img/heapinfo/nplus1Node.png"
-alt="Insert Algorithm: add a new empty node in a heap" >}}
+alt="Insert Algorithm: Add a new empty node in a heap" >}}
 
 圖中的左邊是新增空節點之前，而右邊則是之後的結果，接下來的過程中將會用白圈代表著目前是空值的節點，而第7行的$shiftUp$(過程如下圖)拿新增加的節點(第$n+1$個節點)對應的parent節點
 (為下圖的橘圈)與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入
@@ -197,14 +197,14 @@ $item$，而此時的白圈將由原本的parent節點來替代，接著我們�
 
 {{< CenterImage
 src="/img/heapinfo/shiftUp14.png"
-alt="Insert Algorithm: demo how to shift down" >}}
+alt="Insert Algorithm: Demo how to shift down" >}}
 
 
 這樣的流程持續到當$NewElement$比較大時，此時的結果會像是如下圖這樣，代表橘圈的節點擁有比較小的$item$，而白圈下的節點都擁有著比$NewElement$還大的$item$，
 
 {{< CenterImage
 src="/img/heapinfo/shiftUpBeforeEnd.png"
-alt="Insert Algorithm: meet termination condition" >}}
+alt="Insert Algorithm: Meet termination condition" >}}
 
 而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。當然如果白圈已經移動至結構的頂端位置時，會因爲$h[0]$所存的值而被迫只能留在$h[1]$或者目前頂端位置，而這時我
 們只需要將$NewElement$填入至白圈即可。
@@ -227,14 +227,14 @@ alt="Algorithm: DeleteMin function" >}}
 
 {{< CenterImage
 src="/img/heapinfo/DeleteMin_origin.png"
-alt="Algorithm: DeleteMin function" >}}
+alt="DeleteMin Algorithm: origin structure before execution of the algorithm" >}}
 
 接著我們依照算法的指示先取得頂端節點和最後一個節點(如下圖)，頂端節點會在第六、八行回傳給呼叫者以保證呼叫者能從中拿到最小值之$item$，而最後一個節點$LastElement$會優先在第十行
 取得並在第二十五行找出適當位置來放入白圈中。
 
 {{< CenterImage
 src="/img/heapinfo/getTopAndLast.png"
-alt="Algorithm: DeleteMin function" >}}
+alt="DeleteMin Algorithm: get top element and last element" >}}
 
 而當我們取得指定的節點時，便會在第十一行扣除掉最後一個節點來用while結構計算白圈的適當位置，在while結構內部中，我們設定$i\*2 \leq n$當作成立條件來存取heap結構下的子節點，而
 該結構中除了leaf節點和擁有第$n$個子節點的節點之外，其他節點都因爲結構上是complete tree而擁有兩個子節點，當我們想要存取leaf節點的子節點便會因爲while的條件而被避免，而擁有第
@@ -248,19 +248,19 @@ $n$個子節點的節點則會因爲第十五行的條件來避免程式認為�
 
 {{< CenterImage
 src="/img/heapinfo/shiftDown14.png"
-alt="Algorithm: DeleteMin function" >}}
+alt="DeleteMin Algorithm: Demo how to shift down" >}}
 
 然而，當遇到$LastElement$比較小或者遇上比較例外的子節點而僅剩$LastElement可以比較(如下圖)時，
 
 {{< CenterImage
 src="/img/heapinfo/shiftDownBeforeEnd.png"
-alt="Algorithm: DeleteMin function" >}}
+alt="DeleteMin Algorithm: Meet termination condition" >}}
 
 這時我們可以將$LastElement$放入當前白圈中，這樣的處理剛好滿足了heap結構的性質。
 
 {{< CenterImage
 src="/img/heapinfo/shiftDownAfterEnd.png"
-alt="Algorithm: DeleteMin function" >}}
+alt="Algorithm: Insert the Last element into the empty node" >}}
 
 
 ## 結論
