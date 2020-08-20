@@ -169,8 +169,8 @@ src="/img/heapinfo/Heap_isFullAlg.png"
 alt="Algorithm: isFull function" >}}
 
 
-而$top$函式則是固定獲得heap結構的頂端物件，在這裡以陣列中的第1個位置上的物件來表示頂端物件，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$和$i/2$來取得
-chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一個位置當作是頂端物件。
+而$top$函式則是固定獲得heap結構的頂端物件或者頂端節點，在這裡以陣列中的第1個位置上的物件來表示頂端節點，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$
+和$i/2$來取得chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一個位置當作是頂端節點。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_topAlg.png"
@@ -190,9 +190,9 @@ src="/img/heapinfo/nplus1Node.png"
 alt="Insert Algorithm: add a new empty node in a heap" >}}
 
 圖中的左邊是新增空節點之前，而右邊則是之後的結果，接下來的過程中將會用白圈代表著目前是空值的節點，而第7行的$shiftUp$(過程如下圖)拿新增節點對應的parent節點(為下圖的橘圈)
-與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入parent的
-$item$，而此時的白圈將由原本的parent來替代，接著我們再以目前白圈的parent節點來和$NewElement$進行第二次的$item$之數值比較，若parent節點還是比較大時，則會像第一次那樣，
-原本的白圈被此時的parent所存下的$item$替代，而parent節點則以白圈來替代，
+與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入$item$，而此
+時的白圈將由原本的parent節點來替代，接著我們再以目前白圈的parent節點來和$NewElement$進行第二次的$item$之數值比較，若parent節點還是比較大時，則會像第一次那樣，原本的白圈被
+此時的parent節點所存下的$item$替代，而parent節點則以白圈來替代，
 
 {{< CenterImage
 src="/img/heapinfo/shiftUp14.png"
@@ -207,33 +207,41 @@ alt="Insert Algorithm: meet termination condition" >}}
 
 而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。
 
-補充：從這樣的流程來看，我們一直不斷往上移動白圈直到移動到適當位置，並放入$NewElement$至白圈內部，所以將此處理方式命名為$shiftUp$
-
+補充：從這樣的流程來看，我們一直不斷往上移動白圈直到移動到適當位置，並放入$NewElement$至白圈內部，所以將此處理方式命名為$shiftUp$。
+ 
 {{< CenterImage
 src="/img/heapinfo/shiftUpAfterEnd.png"
 alt="Insert Algorithm: Insert $NewElement$ into the empty node" >}}
 
-
-
-
-最後的$DeleteMin$函式會在第5、6行做一些前置動作並且先取得頂端物件好在第8行進行回傳，而第7行呼叫的$shiftDown$則是負責替取出頂端物件後的結構作些重整好有節點能夠頂替頂端
+最後的$DeleteMin$函式會在第5、6行做一些前置動作並且先取得頂端節點好在第8行進行回傳，而第7行呼叫的$shiftDown$則是負責替取出頂端物件後的結構作些重整好有節點能夠頂替頂端
 物件並且維持前面所提到的兩個性質，在$shiftDown$函式中會先取得heap結構中的最後一個物件$LastElement$並執行$n-1$方便不包含其物件，接著以當前存有頂端物件的節點位置為主來和
 它的child節點進行比較，當child節點其中一個比較小時，便放入目前存放空值或者無意義冗餘$item$的節點，並且原本child
+
+最後的$DeleteMin$函式會優先取得heap結構上的頂端節點，也就是$h[1]$，此時的頂端節點會因爲被取走的關係而不能夠繼續存在該結構中，所以必須透過第七行的$shiftDown$函式從剩下的
+節點挑出適合節點來頂替它以維持heap結構原本要有的性質，該$shiftDown$函式跟$shiftUp$函式，只是白圈會從頂端的位置往下移動，最後由第十行提到的$LastElement$來放入白圈中。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_DeleteMinAlg.png"
 alt="Algorithm: DeleteMin function" >}}
 
-
-
+首先我們進入$DeleteMin$函式之前，我們所擁有的heap結構會如同下圖：
 
 {{< CenterImage
 src="/img/heapinfo/DeleteMin_origin.png"
 alt="Algorithm: DeleteMin function" >}}
 
+接著我們依照算法的指示先取得頂端節點和最後一個節點(如下圖)，頂端節點會在第六、八行回傳給呼叫者以保證呼叫者能從中拿到最小值之$item$，而最後一個節點$LastElement$會優先在第十行
+取得並在第二十五行找出適當位置來放入白圈中。
+
 {{< CenterImage
 src="/img/heapinfo/getTopAndLast.png"
 alt="Algorithm: DeleteMin function" >}}
+
+而當我們取得指定的節點時，便會在第十一行扣除掉最後一個節點來用while結構計算白圈的適當位置，在while結構內部中，我們會先從頂端節點位置中找到其child節點，並且拿他們所擁有的$item$
+來和$LastElement$比較(如下圖的第一次)
+
+	，當child節點之一比較小時，較小的節點便直接替代頂端節點(如下圖第二次的第二個節點)，而原本的節點就變成白圈，接著我們再以白圈的child節點再進行
+與$LastElement$的$item$比較(如下圖的第二次)，同樣地，如果還是child節點之一比較小時，較小的節點便直接頂替白圈(如下圖第三次的第4個節點)，而原本較小的節點就變成白圈
 
 {{< CenterImage
 src="/img/heapinfo/shiftDown14.png"
