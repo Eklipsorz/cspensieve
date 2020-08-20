@@ -149,17 +149,17 @@ Heap Order Property在這裡會以數值系統來比較並且採用以Min Heap�
 #### 定義了Heap的ADT並按照ADT來寫出對應的Pseudo Code。
 
 在這ADT(如下圖)中，我們定義了Heap是什麼、存放什麼物件、它擁有哪些可以對自己處理的操作，在這裡我們以建構Min Heap為主，首先我們可以透過在用Binary Tree實作時強調的性
-質直接將每個Heap當成固定大小的陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$會在Heap結構中每個節點會儲存的資料，而每個$item$可以會是
-不同型態的資料，在這裡將它設定成$Element$型態以保持彈性，最後$n$則是正整數(包含0)，定義陣列所擁有的$item$之總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數
-並放入$n$.
+質直接將每個Heap當成固定大小的陣列，並且以該陣列以及其他參數$item$、$n$來當作每個函式的輸入參數。參數$item$在Heap結構中會是每個節點會儲存的資料，而每個$item$可以是
+不同型態的資料，在這裡將它設定成$Element$型態以保持彈性，最後$n$則是正整數(包含0)，定義陣列所擁有的節點總數，通常會使用函式$getHeapSize(heap)$來獲取對應的總數並放入
+$n$.
 
 {{< CenterImage
 src="/img/heapinfo/heapADT.png"
 alt="ADT: heap structure" >}}
 
 
-函式部分則有$isEmpty$、$isFull$、$top$、$insert$以及$DeleteMin$等基本函式，$isEmpty$和$isFull$(如下圖表示兩個演算法)會根據結構內的節點總數來判別該heap是否空或者是
-否滿，當總數(此時由$n$變數存放)等於0時，就表示heap結構沒有任何$item$；而當總數等於該heap結構能存放的容量$MaxSize$時，就表示heap結構已經存滿$item$。
+函式部分則有$isEmpty$、$isFull$、$top$、$insert$以及$DeleteMin$等基本函式，$isEmpty$和$isFull$(如下圖所表示的兩個演算法)會根據結構內的節點總數來判別該Heap是否空或者是
+否滿，當總數(此時由$n$變數存放)等於0時，就表示heap結構沒有任何節點；而當總數等於該heap結構能存放的容量$MaxSize$時，就表示Heap結構的節點總數到達該結構能夠存放的容量。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_isEmptyAlg.png"
@@ -170,15 +170,15 @@ src="/img/heapinfo/Heap_isFullAlg.png"
 alt="Algorithm: isFull function" >}}
 
 
-而$top$函式則是固定獲得heap結構的頂端物件或者頂端節點，在這裡以陣列中的第1個位置上的物件來表示頂端節點，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$
-和$i/2$來取得chile和parent這兩個節點的$item$，因此都跳過該位置並拿它下一個位置當作是頂端節點。
+而$top$函式則是固定獲得Heap結構的頂端物件或者頂端節點，在這裡以陣列中的第1個位置上的物件來表示頂端節點，其中第0個位置由於其位置數是代表0，很難去直接用它來做$i\*2$
+和$i/2$來存取child和parent這兩個節點，因此都跳過該位置並拿它下一個位置當作是頂端節點。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_topAlg.png"
 alt="Algorithm: top function" >}}
 
-$Insert$函式(如下圖所示)會在維持前面所述的兩種性質下將$item$放入該結構中，首先該算法會在在第5、6、10行預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個
-空節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，
+$Insert$函式(如下圖所示)會在維持前面所述的兩種性質下將$item$放入該結構中，首先該算法將在第5、6、10行預先將要放入的$item$定義成$NewElement$並且在樹狀結構新增一個
+擁有空值的節點或者說佔用陣列中的第$n+1$個位置($n$為目前存有$item$的節點數)，
 
 {{< CenterImage
 src="/img/heapinfo/Heap_InsertAlg.png"
@@ -190,10 +190,10 @@ alt="Algorithm: Insert function" >}}
 src="/img/heapinfo/nplus1Node.png"
 alt="Insert Algorithm: add a new empty node in a heap" >}}
 
-圖中的左邊是新增空節點之前，而右邊則是之後的結果，接下來的過程中將會用白圈代表著目前是空值的節點，而第7行的$shiftUp$(過程如下圖)拿新增節點對應的parent節點(為下圖的橘圈)
-與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入$item$，而此
-時的白圈將由原本的parent節點來替代，接著我們再以目前白圈的parent節點來和$NewElement$進行第二次的$item$之數值比較，若parent節點還是比較大時，則會像第一次那樣，原本的白圈被
-此時的parent節點所存下的$item$替代，而parent節點則以白圈來替代，
+圖中的左邊是新增空節點之前，而右邊則是之後的結果，接下來的過程中將會用白圈代表著目前是空值的節點，而第7行的$shiftUp$(過程如下圖)拿新增加的節點(第$n+1$個節點)對應的parent節點
+(為下圖的橘圈)與$NewElement$進行第一次的$item$之數值比較，當parent節點的數值比較大時，便把parent節點的$item$放入新增加的節點(白圈)裡，而此時白圈會用紅圈表示該節點已經被填入
+$item$，而此時的白圈將由原本的parent節點來替代，接著我們再以目前白圈的parent節點來和$NewElement$進行第二次的$item$之數值比較，若parent節點還是比較大時，則會像第一次那樣，原
+本的白圈會擁有此時的parent節點所存下的$item$，而parent節點則以白圈來替代，
 
 {{< CenterImage
 src="/img/heapinfo/shiftUp14.png"
@@ -206,7 +206,8 @@ alt="Insert Algorithm: demo how to shift down" >}}
 src="/img/heapinfo/shiftUpBeforeEnd.png"
 alt="Insert Algorithm: meet termination condition" >}}
 
-而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。
+而面對這樣子的情況，我們可以直接將$NewElement$放入白圈中以維持性質。當然如果白圈已經移動至結構的頂端位置時，會因爲$h[0]$所存的值而被迫只能留在$h[1]$或者目前頂端位置，而這時我
+們只需要將$NewElement$填入至白圈即可。
 
 補充：從這樣的流程來看，我們一直不斷往上移動白圈直到移動到適當位置，並放入$NewElement$至白圈內部，所以將此處理方式命名為$shiftUp$。
  
