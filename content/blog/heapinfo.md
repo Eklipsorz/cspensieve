@@ -216,14 +216,15 @@ src="/img/heapinfo/shiftUpAfterEnd.png"
 alt="Insert Algorithm: Insert $NewElement$ into the empty node" >}}
 
 
-最後的$DeleteMin$函式會優先取得heap結構上的頂端節點，也就是$h[1]$，此時的頂端節點會因爲被取走的關係而不能夠繼續存在該結構中，所以必須透過第七行的$shiftDown$函式從剩下的
-節點挑出適合節點來頂替它以維持heap結構原本要有的性質，該$shiftDown$函式跟$shiftUp$函式，只是白圈會從頂端的位置往下移動，最後由第十行提到的$LastElement$來放入白圈中。
+最後的$DeleteMin$函式會優先取得Heap結構上的頂端節點，也就是$h[1]$，此時的頂端節點會因爲被取走的關係而不能夠繼續存在該結構中，所以必須透過第七行的$shiftDown$函式從剩下的
+節點挑出適合節點來頂替它以維持Heap結構原本要有的性質，該$shiftDown$函式跟$shiftUp$函式雷同，只是白圈會從頂端的位置往下移動，最後由第二十五行提到的$LastElement$來放入白圈
+中。
 
 {{< CenterImage
 src="/img/heapinfo/Heap_DeleteMinAlg.png"
 alt="Algorithm: DeleteMin function" >}}
 
-首先我們進入$DeleteMin$函式之前，我們所擁有的heap結構會如同下圖：
+首先我們進入$DeleteMin$函式之前，我們所擁有的Heap結構會如同下圖：
 
 {{< CenterImage
 src="/img/heapinfo/DeleteMin_origin.png"
@@ -236,15 +237,15 @@ alt="DeleteMin Algorithm: origin structure before execution of the algorithm" >}
 src="/img/heapinfo/getTopAndLast.png"
 alt="DeleteMin Algorithm: get top element and last element" >}}
 
-而當我們取得指定的節點時，便會在第十一行扣除掉最後一個節點來用while結構計算白圈的適當位置，在while結構內部中，我們設定$i\*2 \leq n$當作成立條件來存取heap結構下的子節點，而
+而當我們取得指定的節點時，便會在第十一行扣除掉最後一個節點來用while結構計算白圈的適當位置，在while結構內部中，我們設定 $i\*2 \leq n$ 當作成立條件來存取Heap結構下的子節點，而
 該結構中除了leaf節點和擁有第$n$個子節點的節點之外，其他節點都因爲結構上是complete tree而擁有兩個子節點，當我們想要存取leaf節點的子節點便會因爲while的條件而被避免，而擁有第
-$n$個子節點的節點則會因爲第十五行的條件來避免程式認為有兩個子節點而存取錯誤，不管是遇上哪個例外，這些情況下，都會透過第二十五行來將$LastElement$放入當前節點中，而非是造成例
-外的子節點。
+$n$個子節點的節點則會因爲第十五行的條件來避免程式認為有兩個子節點而存取錯誤，不管是遇上哪個例外，這些情況下，都會透過第二十五行來將$LastElement$放入當前節點中，而非直接處理
+例外的子節點。
 
 那麼考慮擁著有兩個子節點的節點，一開始進入while時，我們會像下圖中的第一次一樣先將頂端節點位置設定成白圈並找到其child節點，並且拿他們所擁有的$item$來和$LastElement$比較(第一
 次的橘圈表示當前要被比較的節點)，當child節點之一比較小時，較小的節點便像圖中第二次的第二個節點那樣頂替白圈，而原本的節點就變成白圈，接著我們再以白圈為主的child節點和$LastElement$
 進行比較(第二次的橘圈來表示當前要被比較節點)，若還是child節點之一比較小時，較小的節點就如同第三次的第四個節點那樣，然後再挑出child節點和$LastElement$來比較，接著大小關係還是一樣的
-狀況時，就會像是第四次，每一次的比較成立都會使得白圈往下移動，
+狀況時，就會像是第四次，每一次的相同比較結果出現都會使得白圈往下移動，
 
 {{< CenterImage
 src="/img/heapinfo/shiftDown14.png"
@@ -256,14 +257,13 @@ alt="DeleteMin Algorithm: Demo how to shift down" >}}
 src="/img/heapinfo/shiftDownBeforeEnd.png"
 alt="DeleteMin Algorithm: Meet termination condition" >}}
 
-這時我們可以將$LastElement$放入當前白圈中，這樣的處理剛好滿足了heap結構的性質。
+這時我們可以將$LastElement$放入當前白圈中，這樣的處理剛好滿足了Heap結構的性質。
 
 {{< CenterImage
 src="/img/heapinfo/shiftDownAfterEnd.png"
 alt="Algorithm: Insert the Last element into the empty node" >}}
 
-
 ## 結論
-雖然Heap結構上在每本書中都會有一定程度上的解釋，但大部分都把Heap結構視作為另一種Tree結構來解釋，而非直接強調兩者是獨立的結構來說明。為此，我寫下了這篇文章心得簡單地描述
-Heap結構和Tree結構兩者間的獨立性以及強調Tree結構只不過是實現Heap結構的其中一個手段，接著再用Binary Tree來構築一個Heap結構以及它會有什麼樣的基本操作。另外程式碼的部分我不
-會使用某種特定語言來侷限於看得懂語法的人，而是直接採用比較中立的pseudo code來說明如何用Binary Tree構築。
+雖然Heap結構上在每本書中都會有一定程度上的解釋，但大部分都把Heap結構視作為Tree結構來解釋，而非直接強調兩者是獨立的結構來說明。為此，我寫下了這篇文章心得簡單地描述
+Heap結構和Tree結構兩者間的獨立性以及強調Tree結構只不過是實現Heap結構的其中一個手段，接著再用Binary Tree來構築一個Heap結構以及它會有什麼樣的基本操作。另外程式碼的部
+分我不會使用某種特定語言來侷限於看得懂語法的人，而是直接採用比較中立的Pseudo code來說明如何用Binary Tree構築。
