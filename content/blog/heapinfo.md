@@ -213,9 +213,6 @@ alt="Insert Algorithm: meet termination condition" >}}
 src="/img/heapinfo/shiftUpAfterEnd.png"
 alt="Insert Algorithm: Insert $NewElement$ into the empty node" >}}
 
-最後的$DeleteMin$函式會在第5、6行做一些前置動作並且先取得頂端節點好在第8行進行回傳，而第7行呼叫的$shiftDown$則是負責替取出頂端物件後的結構作些重整好有節點能夠頂替頂端
-物件並且維持前面所提到的兩個性質，在$shiftDown$函式中會先取得heap結構中的最後一個物件$LastElement$並執行$n-1$方便不包含其物件，接著以當前存有頂端物件的節點位置為主來和
-它的child節點進行比較，當child節點其中一個比較小時，便放入目前存放空值或者無意義冗餘$item$的節點，並且原本child
 
 最後的$DeleteMin$函式會優先取得heap結構上的頂端節點，也就是$h[1]$，此時的頂端節點會因爲被取走的關係而不能夠繼續存在該結構中，所以必須透過第七行的$shiftDown$函式從剩下的
 節點挑出適合節點來頂替它以維持heap結構原本要有的性質，該$shiftDown$函式跟$shiftUp$函式，只是白圈會從頂端的位置往下移動，最後由第十行提到的$LastElement$來放入白圈中。
@@ -237,19 +234,27 @@ alt="Algorithm: DeleteMin function" >}}
 src="/img/heapinfo/getTopAndLast.png"
 alt="Algorithm: DeleteMin function" >}}
 
-而當我們取得指定的節點時，便會在第十一行扣除掉最後一個節點來用while結構計算白圈的適當位置，在while結構內部中，我們會先從頂端節點位置中找到其child節點，並且拿他們所擁有的$item$
-來和$LastElement$比較(如下圖的第一次)
+而當我們取得指定的節點時，便會在第十一行扣除掉最後一個節點來用while結構計算白圈的適當位置，在while結構內部中，我們設定$i\*2 \leq n$當作成立條件來存取heap結構下的子節點，而
+該結構中除了leaf節點和擁有第$n$個子節點的節點之外，其他節點都因爲結構上是complete tree而擁有兩個子節點，當我們想要存取leaf節點的子節點便會因爲while的條件而被避免，而擁有第
+$n$個子節點的節點則會因爲第十五行的條件來避免程式認為有兩個子節點而存取錯誤，不管是遇上哪個例外，這些情況下，都會透過第二十五行來將$LastElement$放入當前節點中，而非是造成例
+外的子節點。
 
-	，當child節點之一比較小時，較小的節點便直接替代頂端節點(如下圖第二次的第二個節點)，而原本的節點就變成白圈，接著我們再以白圈的child節點再進行
-與$LastElement$的$item$比較(如下圖的第二次)，同樣地，如果還是child節點之一比較小時，較小的節點便直接頂替白圈(如下圖第三次的第4個節點)，而原本較小的節點就變成白圈
+那麼考慮擁著有兩個子節點的節點，一開始進入while時，我們會像下圖中的第一次一樣先將頂端節點位置設定成白圈並找到其child節點，並且拿他們所擁有的$item$來和$LastElement$比較(第一
+次的橘圈表示當前要被比較的節點)，當child節點之一比較小時，較小的節點便像圖中第二次的第二個節點那樣頂替白圈，而原本的節點就變成白圈，接著我們再以白圈為主的child節點和$LastElement$
+進行比較(第二次的橘圈來表示當前要被比較節點)，若還是child節點之一比較小時，較小的節點就如同第三次的第四個節點那樣，然後再挑出child節點和$LastElement$來比較，接著大小關係還是一樣的
+狀況時，就會像是第四次，每一次的比較成立都會使得白圈往下移動，
 
 {{< CenterImage
 src="/img/heapinfo/shiftDown14.png"
 alt="Algorithm: DeleteMin function" >}}
 
+然而，當遇到$LastElement$比較小或者遇上比較例外的子節點而僅剩$LastElement可以比較(如下圖)時，
+
 {{< CenterImage
 src="/img/heapinfo/shiftDownBeforeEnd.png"
 alt="Algorithm: DeleteMin function" >}}
+
+這時我們可以將$LastElement$放入當前白圈中，這樣的處理剛好滿足了heap結構的性質。
 
 {{< CenterImage
 src="/img/heapinfo/shiftDownAfterEnd.png"
