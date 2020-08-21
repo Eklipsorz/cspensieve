@@ -22,4 +22,14 @@ draft: true
 
 ![](/img/boyermooreAlg/cover.jpeg)
 
-test
+## Overview
+
+
+## Proof: why the algorithm works
+
+
+## Performance
+
+
+## Conclusion
+
