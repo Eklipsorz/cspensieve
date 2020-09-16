@@ -43,7 +43,17 @@ alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
 src="/img/FindMedianOfTwoArrays/Resultexample.png"
 alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
 
-這時，我們開始花些時間尋找中位數，而中位數由於
+這時，我們開始花些時間尋找中位數，而由於總元素數是偶數所以根據中位數的定義，結果序列中會有2個中位數(也就是4和5)，在這裡會將這兩筆元
+素進行平均計算以及無條件捨棄小數的部分：
+
+$\lfloor \frac{median1+median2}{2} \rfloor = \lfloor \frac{4+5}{2} \rfloor = 4$
+
+但如果總元素數是奇數(如下圖)的話，在這裡會只會有一個中位數(也就是4)
+
+{{< CenterImage
+src="/img/FindMedianOfTwoArrays/Oddexample.png"
+alt="表示某個物件$Obj_i$被堆放在其他物件上" >}}
+
 
 
 若選擇第一個解法，勢必會花上$O(n)$的時間和空間成本來重新排列，比如說
